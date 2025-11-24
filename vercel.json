@@ -1,6 +1,5 @@
 {
   "build": {
-    "env": {},
     "npmInstallFlags": "--legacy-peer-deps"
   }
 }
