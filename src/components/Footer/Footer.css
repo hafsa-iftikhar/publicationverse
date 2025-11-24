@@ -1,0 +1,406 @@
+/* ==========================================
+   FOOTER MAIN CONTAINER
+========================================== */
+.footer {
+  background: linear-gradient(135deg, rgba(3, 17, 46, 0.90), rgba(2, 26, 75, 0.90)),
+              url("/public/images/background8.jpeg");
+  background-size: cover;
+  background-position: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff;
+  padding: 70px 25px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ==========================================
+   FIX: PERFECT CENTERED 3 COLUMNS
+========================================== */
+.footer-top-section {
+  max-width: 1200px;
+  margin: 0 auto;                   
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;  /* 🔥 All columns EXACT equal width */
+  gap: 25px;                               /* Balanced spacing */
+  align-items: flex-start;
+  padding: 0 20px;
+  padding-left: 150px;
+}
+
+.first-column {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.second-column {
+  margin-left: 0;
+}
+
+
+/* ==========================================
+   HEADINGS
+========================================== */
+.footer-heading,
+.footer-heading-contact {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #e1c002;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* ==========================================
+   CONTACT COLUMN — LOGO SECTION
+========================================== */
+.logo-section .logo-text {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #d0ad10;
+}
+
+.logo-text-2 {
+  font-size: 20px;
+  opacity: 0.85;
+  font-weight: 500;
+  width: 70px;
+}
+
+
+/* CONTACT ITEMS */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+.contact-item svg {
+  color: #76b1ff;
+  font-size: 17px;
+}
+
+/* ==========================================
+   SOCIAL ICONS
+========================================== */
+.footer-social-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.social-icon-link {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 10px;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: 0.35s ease;
+}
+
+.social-icon-link svg {
+  font-size: 18px;
+  color: white;
+}
+
+.social-icon-link:hover {
+  background: #1f5eff;
+  transform: translateY(-4px);
+}
+
+/* ==========================================
+   VERIFIED BADGE
+========================================== */
+.meta-verified-container {
+  margin-top: 18px;
+}
+
+.verified-badge {
+  display: inline-block;
+  background: rgba(0, 123, 255, 0.2);
+  padding: 8px 15px;
+  border-radius: 25px;
+  font-size: 15px;
+}
+
+/* ==========================================
+   QUICK LINKS + INFORMATION
+========================================== */
+
+.footer-links-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links-list li {
+  margin-bottom: 8px;
+}
+
+.footer-links-list li a,
+.link-style-button {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-decoration: none;
+  color: #d7e6ff;
+  font-size: 15px;
+  opacity: 0.9;
+  transition: 0.35s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-links-list li a:hover,
+.link-style-button:hover {
+  color: #6fb4ff;
+  transform: translateX(5px);
+}
+
+/* Arrow */
+.arrows {
+  font-size: 15px;
+  color: #e3b600;
+  display: inline-block;
+  line-height: 1;
+}
+
+/* Button link styling */
+.link-style-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* ==========================================
+   GLOBAL LOCATIONS (REDESIGN FOR PROFESSIONALISM)
+   --- ALIGNMENT FIXES INCLUDED ---
+========================================== */
+.global-locations-section {
+  margin-top: 80px;
+  text-align: center;
+  z-index: 2;
+}
+
+.global-heading {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 45px;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.locations-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.location-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+  padding: 30px 25px;
+  border-radius: 8px;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  backdrop-filter: none;
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.location-box:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #6fb4ff;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.location-box h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #d7e6ff;
+  text-align: center; /* Ensure heading is centered */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.flag-icon {
+  width: 60px;
+  height: auto; /* 🎯 FIX 2: Maintain aspect ratio */
+  margin-bottom: 12px;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  display: block; /* 🎯 FIX 3 */
+}
+
+.location-box p {
+  font-size: 15px;
+  line-height: 1.4;
+  opacity: 0.8;
+  margin-top: 10px;
+  text-align: center; /* Ensure paragraph is centered */
+}
+
+/* ==========================================
+   COPYRIGHT LINE
+========================================== */
+.footer-copyright {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 15px;
+  opacity: 0.8;
+  z-index: 2;
+}
+
+.footer-copyright::before {
+    content: '';
+    display: block;
+    max-width: 1200px;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 40px auto 30px;
+}
+
+/* ========================================== */
+/* FINAL RESPONSIVE FOOTER STYLES             */
+/* (Preserves original left-aligned desktop)  */
+/* ========================================== */
+/* --- 1. Tablet View (Max Width 1024px) --- */
+@media screen and (max-width: 1024px) {
+  .footer {
+    padding: 50px 15px; /* Adjust vertical padding */
+  }
+
+  .footer-top-section {
+    /* Reset original padding */
+    padding: 0 15px;
+    padding-left: 15px;
+    
+    /* Change to a 2-column layout for tablets */
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px 30px;
+  }
+  
+  /* Force the third original column (Information) to span the bottom row */
+  .footer-top-section > div:nth-child(3) {
+    grid-column: 1 / span 2; /* Span both columns */
+    margin-top: 15px;
+  }
+  
+  /* Adjust global locations section */
+  .global-locations-section {
+    margin-top: 60px; /* Slightly increase margin for separation */
+  }
+
+  .global-heading {
+    font-size: 28px; /* Slight adjustment to heading size */
+    margin-bottom: 35px; /* Keep consistent spacing */
+  }
+  
+  .locations-row {
+    /* 🎯 FIX: Center the row content when wrapping */
+    justify-content: center;
+    gap: 20px; /* Better separation */
+  }
+  
+  .location-box {
+    width: 240px; /* Slightly wider boxes for stability */
+    padding: 25px 20px; /* Match new desktop vertical padding */
+  }
+}
+
+
+
+/* --- 2. Mobile View (Max Width 650px) --- */
+/* --- 2. Mobile View (Max Width 650px) --- */
+@media screen and (max-width: 650px) {
+  .footer {
+    padding: 40px 10px;
+  }
+  
+  .footer-top-section {
+    /* Switch to a single-column, stacked layout */
+    grid-template-columns: 1fr;
+    gap: 35px; /* Vertical space between stacked columns */
+    padding: 0 15px;
+
+    /* 🎯 FIX 1: Limit the width of the entire stacked block to center it */
+    max-width: 350px; 
+    margin: 0 auto; 
+    
+    /* Ensure text is left-aligned within the centered block */
+    text-align: left; 
+  }
+  
+  /* Ensure ALL columns take full width of the new max-width container */
+  .footer-top-section > div {
+    grid-column: auto;
+    margin: 0;
+    width: 100%;
+  }
+  
+  /* Reset the margin for the third column */
+  .footer-top-section > div:nth-child(3) {
+    margin-top: 0; 
+  }
+
+  /* 🎯 FIX 2: Explicitly left-align content in the first column (Contact/Social) */
+  .contact-item {
+    justify-content: flex-start;
+  }
+  
+  .footer-social-icons {
+    justify-content: flex-start;
+  }
+  
+  .logo-text-2 {
+    /* Ensure the underline aligns with the text on the left */
+    margin: 0;
+  }
+
+  /* Headings */
+  .footer-heading,
+  .footer-heading-contact {
+    font-size: 17px;
+    margin-bottom: 12px;
+  }
+  
+  /* Global Locations */
+  .global-heading {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .locations-row {
+    /* Force location boxes to stack vertically for maximum readability */
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .location-box {
+    width: 100%; /* Take full width of the container */
+    max-width: 300px; 
+  }
+  
+  .footer-copyright {
+    margin-top: 30px;
+    font-size: 14px;
+  }
+}

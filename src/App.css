@@ -1,0 +1,54 @@
+.about-page {
+  padding: 60px 10%;
+  font-family: "Poppins", sans-serif;
+  color: #191970;
+}
+
+.about-hero {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.about-hero h1 {
+  font-size: 2.5rem;
+  color: #191970;
+  margin-bottom: 15px;
+}
+
+.about-hero p {
+  color: #333;
+  font-size: 1.1rem;
+  max-width: 750px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.content-block {
+  background: #f8f9fc;
+  border-left: 5px solid #FFA500;
+  padding: 25px;
+  border-radius: 8px;
+}
+
+.content-block h2 {
+  color: #191970;
+  margin-bottom: 10px;
+}
+
+.content-block p {
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,614 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* ===== SUBJECTS HERO SECTION ===== */
+.subjects-hero {
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 40, 0.65)),
+    url("/public/images/background7.webp") center/cover no-repeat;
+
+  height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  color: #fff;
+  overflow: hidden;
+}
+
+.subjects-hero::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: rgba(255,255,255,0.1);
+  filter: blur(120px);
+  border-radius: 50%;
+  top: -100px;
+  left: -100px;
+  animation: floatGlow 15s infinite alternate ease-in-out;
+}
+
+.subjects-hero::after {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: rgba(0,150,255,0.08);
+  filter: blur(100px);
+  border-radius: 50%;
+  bottom: -100px;
+  right: -80px;
+  animation: floatGlowReverse 18s infinite alternate ease-in-out;
+}
+
+/* Content Wrapper */
+.subjects-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 20px;
+}
+
+/* Heading */
+.subjects-hero-content h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 1.2;
+  color: #ffffff;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  margin-bottom: 20px;
+  animation: fadeText 2s ease forwards;
+}
+
+/* Paragraph */
+.subjects-hero-content p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.7;
+  font-weight: 400;
+  color: #e0e0e0;
+  animation: fadeText 2s ease 0.5s forwards;
+}
+
+/* Fade + Slide Animation */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.subjects-hero-content {
+  animation: fadeUp 1s ease-out forwards;
+}
+
+/* RESPONSIVE STYLING */
+@media (max-width: 1024px) {
+  .subjects-hero {
+    height: 55vh;
+    padding: 0 30px;
+  }
+
+  .subjects-hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .subjects-hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .subjects-hero::before {
+    width: 300px;
+    height: 300px;
+    top: -80px;
+    left: -80px;
+    filter: blur(90px);
+  }
+
+  .subjects-hero::after {
+    width: 250px;
+    height: 250px;
+    bottom: -80px;
+    right: -50px;
+    filter: blur(80px);
+  }
+}
+
+@media (max-width: 600px) {
+  .subjects-hero {
+    height: 60vh;
+    padding: 0 20px;
+  }
+
+  .subjects-hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .subjects-hero-content p {
+    font-size: 1rem;
+  }
+}
+
+/*********** section: 02 ************/
+/* ============================
+   Science & Engineering Section
+============================ */
+
+.subjects-section {
+  width: 100%;
+  padding: 80px 20px;
+  background: #f4f7ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* GRID CONTAINER */
+.subjects-grid {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin: auto;
+}
+
+/* Subject Box Style */
+.subject-box {
+  padding: 32px 26px;
+  border-radius: 2px;
+  text-align: center;
+  color: #ffffff;
+  background: #1a1a1a; /* fallback */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  transition: all 0.35s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  /* subtle border glow */
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Hover Animation */
+.subject-box:hover {
+  transform: translateY(-12px) scale(1.04);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+}
+
+/* Icon */
+.subject-icon {
+  font-size: 70px;
+  margin-bottom: 18px;
+  color: #ffffff;
+  opacity: 0.9;
+  transition: 0.3s ease;
+  padding: 18px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(3px);
+}
+
+.subject-box:hover .subject-icon {
+  transform: scale(1.12);
+  background: rgba(255,255,255,0.22);
+}
+
+.subject-box h3 {
+  font-size: 1.45rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.subject-box p {
+  font-size: 1rem;
+  line-height: 1.55;
+  opacity: 0.9;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* ============================
+   ATTRACTIVE GRADIENT COLORS
+   ============================ */
+.subject-box:nth-child(1) {
+  background: linear-gradient(135deg, #0e1f47, #1e3c72);
+}
+
+.subject-box:nth-child(2) {
+  background: linear-gradient(135deg, #004d4d, #008080); /* dark teal → teal */
+}
+
+.subject-box:nth-child(3) {
+  background: linear-gradient(135deg, #3a0f63, #9c27b0);
+}
+
+.subject-box:nth-child(4) {
+  background: linear-gradient(135deg, #0c3b1a, #4caf50);
+}
+
+.subject-box:nth-child(5) {
+  background: linear-gradient(135deg, #5a0030, #e91e63);
+}
+.subject-box:nth-child(6) {
+  background: linear-gradient(135deg, #663300, #ff9900); /* dark brown → amber */
+}
+
+.subject-box:nth-child(7) {
+  background: linear-gradient(135deg, #800020, #B22222); /* Burgundy → Firebrick */
+}
+/* ===========================
+   ANIMATIONS
+   =========================== */
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+/* ===========================
+   RESPONSIVE BREAKPOINTS
+=========================== */
+
+/* Large Tablets (1024px) – 2 columns */
+@media (max-width: 1024px) {
+  .subjects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .subject-box {
+    padding: 28px 22px;
+  }
+
+  .subject-box h3 {
+    font-size: 1.3rem;
+  }
+
+  .subject-box p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Tablets & Large Phones (768px) – 2 columns but tighter */
+@media (max-width: 768px) {
+  .subjects-section {
+    padding: 60px 15px;
+  }
+
+  .subjects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .subject-icon {
+    font-size: 60px;
+    padding: 14px;
+  }
+
+  .subject-box h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Mobile (600px & below) – 1 column */
+@media (max-width: 600px) {
+  .subjects-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .subject-box {
+    padding: 26px 20px;
+  }
+
+  .subject-box h3 {
+    font-size: 1.15rem;
+  }
+
+  .subject-box p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra Small Phones (420px & below) */
+@media (max-width: 420px) {
+  .subjects-section {
+    padding: 50px 12px;
+  }
+
+  .subject-box {
+    padding: 24px 18px;
+  }
+
+  .subject-icon {
+    font-size: 45px;
+    padding: 12px;
+  }
+
+  .subject-box h3 {
+    font-size: 1.1rem;
+  }
+
+  .subject-box p {
+    font-size: 0.85rem;
+  }
+}
+
+/**************section: 04*******************/
+.science-section {
+  width: 100%;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;        /* vertically center both items */
+  background: #f4f7ff;
+}
+
+/* =============================
+   CONTAINER (LEFT + RIGHT)
+============================= */
+.aesthetic-container {
+  display: flex;
+  flex-direction: row !important;     /* FORCE left → right ALWAYS */
+  align-items: center;
+  justify-content: center;            /* centers BOTH elements inside */
+  gap: 3rem;
+  width: 100%;
+  max-width: 1200px;
+  flex-wrap: nowrap !important;       /* PREVENT WRAP */
+  margin: 0 auto;                     /* center inside parent */
+}
+
+/* =============================
+   LEFT CIRCLE
+============================= */
+.circle-wrapper {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  flex-shrink: 0;                     /* prevent shrinking */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate 20s linear infinite;
+}
+
+.circle-text span {
+  position: absolute;
+  transform-origin: 0 0;
+  font-size: 16px;
+  color: #242425;
+  font-weight: 600;
+  letter-spacing: 1px;
+  white-space: pre;
+}
+
+@keyframes rotate {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.circle-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  border: 3px solid #1b48a4;
+}
+
+.circle-center h3 {
+  font-size: 1.25rem;
+  color: #02208e;
+  font-weight: 600;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* =============================
+   RIGHT TEXT
+============================= */
+.circle-description {
+  max-width: 550px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.circle-description h2 {
+  color: #02208e;
+}
+
+.circle-description p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #1f2937;
+  font-weight: 400;
+}
+
+
+/* =============================
+   RESPONSIVE FIXES (Still LEFT→RIGHT!)
+============================= */
+@media (max-width: 992px) {
+  .aesthetic-container {
+    gap: 2rem;
+  }
+
+  .circle-wrapper {
+    width: 260px;
+    height: 260px;
+  }
+
+  .circle-center {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+@media (max-width: 768px) {
+  .science-section {
+    padding: 60px 10px;
+  }
+
+  .aesthetic-container {
+    gap: 1.5rem;
+    justify-content: center;   /* stays centered */
+    flex-direction: row !important; /* NEVER column */
+  }
+
+  .circle-wrapper {
+    width: 220px;
+    height: 220px;
+  }
+
+  .circle-center {
+    width: 110px;
+    height: 110px;
+  }
+
+  .circle-description p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .circle-wrapper {
+    width: 180px;
+    height: 180px;
+  }
+
+  .circle-center {
+    width: 95px;
+    height: 95px;
+  }
+
+  .circle-description {
+    max-width: 300px;
+  }
+}
+/* =============================
+   RESPONSIVE FIXES
+============================= */
+@media (max-width: 992px) {
+  .aesthetic-container {
+    gap: 2rem;
+  }
+
+  .circle-wrapper {
+    width: 260px;
+    height: 260px;
+  }
+
+  .circle-center {
+    width: 140px;   /* slightly increased for better visibility */
+    height: 140px;
+  }
+}
+
+@media (max-width: 768px) {
+  .science-section {
+    padding: 60px 10px;
+  }
+
+  .aesthetic-container {
+    gap: 1.5rem;
+    justify-content: center;   
+    flex-direction: row !important;  /* keep horizontal */
+    flex-wrap: wrap;                 /* allow wrap if needed */
+  }
+
+  .circle-wrapper {
+    width: 220px;
+    height: 220px;
+  }
+
+  .circle-center {
+    width: 150px;
+    height: 150px;
+  }
+
+  .circle-description p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .aesthetic-container {
+    flex-direction: column;      /* stack circle above text */
+    align-items: center;         /* center horizontally */
+    justify-content: center;     /* center vertically */
+    gap: 1.8rem;                 /* spacing between circle and text */
+    padding: 1rem 0;             /* optional vertical padding */
+  }
+
+  .circle-wrapper {
+    width: 200px;                /* slightly bigger for better visibility */
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .circle-center {
+    width: 150px;                /* bigger inner circle */
+    height: 150px;
+    border-width: 4px;           /* thicker border for small screens */
+  }
+
+  .circle-text span {
+    font-size: 12px;             /* smaller letters for tight space */
+  }
+
+  .circle-description {
+    max-width: 95%;              /* nearly full width */
+    text-align: center;          /* center under the circle */
+    font-size: 0.95rem;          /* slightly smaller text */
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .circle-description h2 {
+    font-size: 1.1rem;           /* scale heading down */
+    text-align: center;
+    margin-bottom: 0.5rem;
+    text-align: left;
+  }
+}

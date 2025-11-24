@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  color: #191970;
+  padding: 0 100px;
+  height: 80px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Remove header-top gap since we align both on one line */
+.header-top {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+/* ---------- Logo ---------- */
+.logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #191970;
+}
+
+.logo-img {
+  height: 55px;
+  width: 65px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-weight: 900;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+/* ---------- Navigation ---------- */
+.nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav a,
+.nav button {
+  background: none;
+  border: none;
+  color: #191970;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover,
+.nav button:hover {
+  color: #0056D2;
+}
+
+/* ---------- Dropdown ---------- */
+.dropdown {
+  position: relative;
+}
+
+.arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #191970;
+  transition: transform 0.3s ease; /* smooth rotation */
+  margin-top: 0;
+}
+
+/* Hover rotation */
+.dropdown:hover .arrow {
+  transform: rotate(180deg);
+}
+
+/* Make dropdown button a flex container */
+.nav .dropdown > button {
+  display: flex;
+  align-items: center; /* vertically center text and arrow */
+  gap: 4px; /* spacing between text and arrow */
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px 25px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  min-width: 450px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(180px, 1fr));
+  gap: 12px;
+  z-index: 200;
+  animation: fadeIn 0.2s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  position: absolute; /* keep absolute for dropdown */
+  top: 100%; /* directly under the button */
+  left: 0;
+  z-index: 200;
+}
+  /* Show dropdown on hover */
+  .dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  /* Rotate arrow on hover */
+  .dropdown:hover .arrow {
+    transform: rotate(180deg);
+  }
+/*********style dropdown*****************/
+/* ---------- Dropdown Items ---------- */
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 15px;
+  color: #191970; /* default text color */
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 8px;
+  background: #fff; /* default background */
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.dropdown-item:hover {
+  color: #fff !important; /* text becomes white */
+  background-color: #0056D2 !important; /* background highlight */
+  transform: translateX(5px); /* slight slide */
+  box-shadow: 0 4px 12px rgba(0, 86, 210, 0.2); /* subtle shadow */
+}
+
+/* Icon inside circle */
+.dropdown-item .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #fff; /* icon color */
+  background: #191970; /* icon circle background */
+  border-radius: 50%;
+  padding: 6px;
+  min-width: 28px;
+  min-height: 28px;
+  transition: all 0.3s ease;
+}
+
+/* Hover icon effect */
+.dropdown-item:hover .icon {
+  background: #f7f7f7; /* icon accent color on hover */
+  color: #191970; 
+  transform: scale(1.1);
+}
+
+/* ---- Services Dropdown (3 columns, wider) ---- */
+/* Pull the wide Services dropdown slightly to the left */
+.services-menu {
+  min-width: 650px !important;
+  grid-template-columns: repeat(3, minmax(180px, 1fr)) !important;
+  left: -170px !important;   /* shift left */
+}
+/***********subjects menuu *******************/
+/* Subjects menu specific */
+.subjects-menu {
+  display: grid;
+  grid-template-columns: 1fr; /* single column */
+  gap: 10px;
+  min-width: 280px; /* smaller fixed width */
+  max-width: 280px; /* optional max width */
+  padding: 10px 15px; /* reduce padding */
+}
+
+.subjects-menu .dropdown-item .icon {
+  font-size: 1.1rem;
+}
+
+/* Fix alignment issue between icons/text */
+.nav ul li {
+  display: flex;
+  align-items: center;
+  height: 85px; /* match header height for perfect vertical centering */
+}
+
+/* ---------- Animation ---------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Hamburger ---------- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 25px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1200;
+  transition: all 0.3s ease;
+}
+
+.hamburger span {
+  height: 3px;
+  background-color: #191970;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(4px, 4px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(4px, -4px);
+}
+
+/* ======================== */
+/* RESPONSIVE HEADER FIX    */
+/* ======================== */
+/***********responsive code *********************/
+/* Small screens: mobile & tablet */
+@media screen and (max-width: 1024px) {
+  .header {
+    padding: 0 20px;
+    height: 70px;
+  }
+  
+  /* Hamburger */
+  .hamburger {
+    display: flex;
+    z-index: 1200;
+  }
+
+  /* Full-screen mobile menu container */
+  .nav {
+    position: fixed;
+    top: 70px; /* just below header */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px); /* 100% viewport height minus header height */
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto; /* Enable scrolling for long menus */
+    z-index: 1100;
+  }
+
+  .nav.open {
+    transform: translateX(0);
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .nav ul li {
+    width: 100%;
+    height: auto; /* Important: allow space for dropdowns */
+    display: block; /* Stack link and dropdown */
+  }
+
+  /* Main links and dropdown buttons */
+  .nav a,
+  .nav button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    font-size: 1.1rem;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .nav button {
+    /* Override desktop hover for a clearer mobile tap indication */
+    background-color: #f0f0f0;
+  }
+
+  /* Mobile Dropdown Menu Fix */
+  .dropdown-menu {
+    /* Reset for mobile */
+    position: static; /* Stack it below the button */
+    display: flex; /* Change grid layout to flex column for stacking */
+    flex-direction: column;
+    grid-template-columns: 1fr; /* Resetting grid template */
+    gap: 5px; /* Reduced gap */
+    box-shadow: none; /* No shadow in mobile */
+    border-radius: 0;
+    min-width: auto;
+    padding: 0 0 0 20px; /* Indent the dropdown items */
+    /* Collapse effect setup */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 1; /* Keep visible once expanded */
+    visibility: visible; /* Keep visible once expanded */
+    transition: max-height 0.4s ease-out; /* Smooth slide transition */
+  }
+
+  /* Specific dropdown style overrides for mobile */
+  .services-menu,
+  .subjects-menu {
+    grid-template-columns: 1fr !important;
+    min-width: auto !important;
+    left: auto !important;
+  }
+
+  /* Expanded state for the dropdown */
+  .dropdown.open .dropdown-menu {
+    max-height: 500vh; /* Large value to ensure all content fits */
+    padding: 10px 0 10px 20px; /* Add top/bottom padding when open */
+  }
+
+  /* Dropdown item styling inside the mobile menu */
+  .dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 15px;
+    font-size: 0.95rem;
+    background: #f7f7f7;
+    text-align: left;
+  }
+
+  .dropdown-item span:not(.icon){
+    text-align: left !important;
+    flex-grow: 1;
+  } 
+
+  /* Arrow icon rotation */
+  .dropdown button .arrow {
+    margin-left: auto;
+    transform: rotate(0deg); /* Reset desktop rotation */
+    transition: transform 0.3s ease;
+    border-top-color: #191970; /* Ensure color is correct */
+  }
+  
+  .dropdown.open button .arrow {
+    transform: rotate(180deg);
+  }
+  
+  /* Ensure direct links/non-dropdown buttons get the hover style on open */
+  .nav.open a:hover,
+  .nav.open button:hover:not(.dropdown > button) {
+    background-color: #0056D2;
+    color: #fff;
+  }
+}

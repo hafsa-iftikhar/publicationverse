@@ -1,0 +1,2269 @@
+/* ============================== */
+/* HERO SLIDER — REVAMPED DESIGN */
+/* ============================== */
+
+/* Main Slide Container (Full Width, Centered Content) */
+.about-slide {
+  height: 90vh; /* Slightly less than full viewport height for a modern look */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  width: 100%;
+}
+
+/* Image/Background Overlay (Darker and More Subtle) */
+.about-slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Dark, subtle gradient overlay for better text contrast */
+  background: linear-gradient(
+    to bottom right,
+    rgba(2, 6, 26, 0.8),
+    rgba(17, 34, 64, 0.6)
+  );
+  z-index: 0;
+}
+
+/* CONTENT WRAPPER (Text and Image) */
+.about-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Spreads content to edges of max-width */
+  gap: 30px; /* Larger gap for separation */
+  max-width: 1100px; /* Wider max-width for a more spacious feel */
+  width: 100%;
+  padding: 0 40px;
+}
+
+/* LEFT SIDE - TEXT */
+.text-side {
+  flex: 1;
+  max-width: 60%; /* Text takes up slightly more space */
+  padding-right: 40px; /* Add some internal spacing */
+}
+
+.text-side h1 {
+  font-size: 3.2rem; /* Larger, bolder heading */
+  line-height: 1.1;
+  font-weight: 900;
+  margin-bottom: 20px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.text-side .highlight {
+  color: #ffc800; /* New highlight color (bright cyan) */
+  font-style: normal;
+  font-family: inherit;
+  padding-bottom: 2px;
+}
+
+.text-side p {
+  margin-top: 15px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #c0c0c0; /* Lighter grey for better readability */
+  max-width: 650px;
+}
+
+/* BUTTON */
+.cta-btn {
+  margin-top: 10px;
+  padding: 14px 32px;
+  background-color: #ffc800; /* Primary button color */
+  color: #02061a;
+  border-radius: 8px; /* Slightly more rounded corners */
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #fad416;
+  transform: translateY(-3px);
+}
+
+/* RIGHT SIDE - IMAGE */
+.image-side {
+  flex: 1;
+  max-width: 40%; /* Image takes up less space than text */
+  display: flex;
+  justify-content: flex-end; /* Align image to the right */
+  align-items: center;
+  height: 500px; /* Keeping a fixed height for the container to maintain layout */
+}
+
+.image-side img {
+  width: 100%; /* Will still attempt to use 100% of the box's width */
+  max-width: 550px;
+  border-radius: 12px; /* Smoother corners */
+    object-fit: contain; /* Scales the image down to fit entirely within the box */
+  height: 100%; /* Ensures the image respects the container's height */
+  aspect-ratio: auto; /* Allows the image to use its natural aspect ratio */
+  /* --- END KEY CHANGES --- */
+  
+  filter: drop-shadow(0px 8px 20px rgba(0, 0, 0, 0.3));
+}
+
+/* --- MEDIUM SCREEN OPTIMIZATION (max-width: 992px) --- */
+/* --- LAYOUT REMAINS LEFT/RIGHT (DEFAULT FLEX) --- */
+/* ------------------------------------------------ */
+@media (max-width: 992px) {
+    
+    /* Tighter content wrapper */
+    .about-content {
+        gap: 20px; /* Reduce gap */
+        padding: 0 30px; /* Reduce side padding */
+    }
+
+    /* Reduce H1 font size */
+    .text-side h1 {
+        font-size: 2.8rem; 
+    }
+
+    /* Reduce P font size */
+    .text-side p {
+        font-size: 0.95rem; 
+    }
+
+    /* Reduce image container height */
+    .image-side {
+        height: 400px; 
+    }
+}
+
+
+/* ------------------------------------------------ */
+/* --- SMALL SCREEN OPTIMIZATION (max-width: 768px) --- */
+/* --- LAYOUT CHANGES TO UP/DOWN (STACKED) --- */
+/* ------------------------------------------------ */
+@media (max-width: 768px) {
+    
+    /* Main Container Adjustments for Stacking */
+    .about-slide {
+        height: auto; 
+        min-height: 80vh;
+        padding: 40px 0;
+    }
+
+    /* Content Wrapper (Switches to Stacked Layout) */
+    .about-content {
+        flex-direction: column; /* Stacks text and image vertically */
+        gap: 40px; /* Vertical gap */
+        max-width: 100%;
+        padding: 0 20px;
+        justify-content: center;
+        align-items: flex-start; /* Aligns everything to the left */
+    }
+
+    /* LEFT SIDE - TEXT (Full width, left-aligned) */
+    .text-side {
+        max-width: 100%;
+        padding-right: 0;
+    }
+    
+    /* Text alignment and size adjustments */
+    .text-side h1,
+    .text-side p {
+        text-align: left; /* Ensures text is left-aligned */
+    }
+    
+    .text-side h1 {
+        font-size: 2.5rem; /* Mobile H1 size */
+        margin-bottom: 10px;
+    }
+
+    .text-side p {
+        font-size: 1rem; 
+        line-height: 1.5;
+    }
+    
+    /* Button Alignment (Stays left-aligned) */
+    .cta-btn {
+        margin-top: 20px;
+        margin-left: 0; 
+        width: auto; 
+    }
+
+    /* RIGHT SIDE - IMAGE (Full width, aligned left) */
+    .image-side {
+        max-width: 100%;
+        height: auto;
+        justify-content: flex-start; /* Aligns image content to the left */
+        margin-bottom: 20px; 
+    }
+
+    .image-side img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/******************section : 02************************/
+
+.logo-slider-section {
+  background: #fff;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-slider {
+  background: #010642;
+  border-radius: 20px;
+  padding: 30px 50px;
+  width: 70%;
+  max-width: 1200px;
+}
+
+.swiper-slide {
+  display: flex !important;
+  justify-content: center;
+  align-items: center; /* centers logos vertically */
+}
+
+.logo-img {
+  max-width: 280px;   /* increase this to make logos bigger */
+}
+
+.logo-slider .logo-img {
+  max-height: 60px;  /* ensures logos stay aligned */
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  filter: brightness(1.1);
+  display: block;
+}
+
+.logo-slider .logo-img:hover {
+  transform: scale(1.2); /* zoom effect on hover */
+}
+/* ======================================= */
+/* 📱 Extra Small Screens (0–480px) */
+/* ======================================= */
+@media (max-width: 480px) {
+  .logo-slider-section {
+    padding: 25px 10px;
+  }
+
+  .logo-slider {
+    width: 95% !important; /* take most of the screen */
+    padding: 20px 15px !important;
+  }
+
+  .swiper-slide {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo-slider .logo-img {
+    max-width: 150px; /* smaller logos */
+    max-height: 40px;
+  }
+}
+
+/* ======================================= */
+/* 📱 Small Screens (481–768px) */
+/* ======================================= */
+@media (min-width: 481px) and (max-width: 768px) {
+  .logo-slider-section {
+    padding: 35px 20px;
+  }
+
+  .logo-slider {
+    width: 90%;
+    padding: 25px 30px;
+  }
+
+  .logo-slider .logo-img {
+    max-width: 180px;
+    max-height: 50px;
+  }
+}
+
+/* ======================================= */
+/* 💻 Medium Screens / Tablets (769–1024px) */
+/* ======================================= */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .logo-slider-section {
+    padding: 40px 30px;
+  }
+
+  .logo-slider {
+    width: 80%;
+    padding: 30px 40px;
+  }
+
+  .logo-slider .logo-img {
+    max-width: 220px;
+    max-height: 55px;
+  }
+}
+
+/* ======================================= */
+/* 🖥 Large Screens (1025–1440px) */
+/* ======================================= */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .logo-slider-section {
+    padding: 40px 0;
+  }
+
+  .logo-slider {
+    width: 70%;
+    padding: 30px 50px;
+  }
+
+  .logo-slider .logo-img {
+    max-width: 260px;
+    max-height: 60px;
+  }
+}
+
+/* ======================================= */
+/* 🖥 Ultra-wide Screens (1441px and up) */
+/* ======================================= */
+@media (min-width: 1441px) {
+  .logo-slider-section {
+    padding: 50px 0;
+  }
+
+  .logo-slider {
+    width: 65%;
+    padding: 40px 60px;
+  }
+
+  .logo-slider .logo-img {
+    max-width: 280px;
+    max-height: 60px;
+  }
+}
+
+/********************* Section: 03 - Publication Experts ********************/
+/* 🔷 Section Container */
+.publication-section {
+  position: relative;
+  padding: 80px 5%;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* 🔹 Background */
+.publication-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/public/images/background8.jpeg") center/cover no-repeat;
+  filter: blur(1px) brightness(0.85);
+  z-index: 0;
+}
+
+.publication-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 20, 80, 0.8);
+  z-index: 1;
+}
+
+.publication-section > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* 🔸 Title */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 60px;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-transform: uppercase;
+}
+
+/* 🔹 Swiper Container */
+.publication-slider {
+  max-width: 1200px;
+  margin: auto;
+  padding-bottom: 60px;
+}
+
+/* 🔹 Card Style */
+.publication-card {
+  background: #ffffff;
+  border-radius: 5px;
+  padding: 25px 25px 35px;
+  text-align: left;
+  color: #0a1450;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.publication-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 35px rgba(255, 211, 90, 0.4);
+}
+
+/* 🔹 Header */
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 40px;
+  margin-bottom: 20px;
+
+  /* Existing background */
+  background: linear-gradient(135deg, #dbb658, #8f6900);
+  /* 🟢 Added spacing and styling */
+  padding: 25px 30px;         /* gives top & bottom coverage */
+  border-radius: 15px;        /* smooth corners */
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.05); /* soft depth */
+}
+
+.editor-img {
+  width: 120px;
+  height: 160px;
+  border-radius: 5%;
+  object-fit: cover;
+  border: 4px solid #ffffff;
+  box-shadow: 0 0 15px rgba(10, 20, 80, 0.3);
+  margin-top: 30px;
+}
+
+/* 🔹 Name + Flag + Description */
+.editor-info {
+  flex: 1;
+}
+
+.name-flag-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.editor-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0a1450;
+}
+
+.flag-img {
+  width: 85px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 3px;
+  margin-left: 10px;
+  border: 1px solid #ccc;
+  vertical-align: middle;
+}
+.name-flag-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.editor-title {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+/* 🔸 Button */
+.success-btn {
+  background: #0a1450;
+  color: #fff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(10, 20, 80, 0.3);
+}
+
+.success-btn:hover {
+  background: #0038b0;
+  color: #ffffff;
+}
+
+/* 🔹 Award + WhatsApp section */
+/* 🔹 Card Bottom Layout */
+.card-bottom {
+  margin-top: 25px;
+  width: 100%;
+}
+
+/* Row with award & table */
+.bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 25px;
+}
+
+/* Award + WhatsApp */
+.award-side {
+  flex: 0.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.award-img {
+  width: 150px;
+  height: 100px;
+  object-fit: contain; 
+  
+}
+
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  background-color: #018933;
+  color: #fff;
+  font-weight: 600;
+  font-size: 9.6px;
+  letter-spacing: 0.3px;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 22px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+  transition: all 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(30, 191, 88, 0.35);
+}
+
+.whatsapp-btn:active {
+  transform: scale(0.98);
+}
+
+/* === Icon Styling === */
+.whatsapp-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-btn:hover .whatsapp-icon {
+  color: #f3f3f3;
+  transform: rotate(10deg);
+}
+
+/* Table Side */
+.table-side thead tr {
+  background-color: #191970; /* Deep Blue or any color you like */
+  color: #fff; /* White text for contrast */
+  font-weight: 600;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.table-side {
+  flex: 1;
+  background: rgba(245, 248, 255, 0.95);
+  border-radius: 2px;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05);
+  padding: 10px;
+}
+
+.table-side table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 14px;
+}
+
+.table-side th,
+.table-side td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* 🔹 Pagination */
+.swiper-pagination-bullets {
+  bottom: 0 !important;
+}
+
+.swiper-pagination-bullet {
+  background: #ffffff !important;
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  background: #ffd35a !important;
+  opacity: 1;
+}
+
+/* Hide navigation arrows */
+.swiper-button-prev,
+.swiper-button-next {
+  display: none !important;
+}
+
+/* ======================================= */
+/* 📱 Extra Small Screens (0–480px) */
+/* ======================================= */
+@media (max-width: 480px) {
+  .publication-section {
+    padding: 40px 10px;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+  }
+
+  .publication-slider {
+    padding-bottom: 40px;
+  }
+
+  .publication-card {
+    padding: 15px 15px 25px;
+    max-width: 100%;
+    margin: auto;
+    text-align: left; /* keep layout */
+  }
+
+  .editor-img {
+    width: 80px;
+    height: 100px;
+  }
+
+  .editor-info {
+    flex: 1;
+  }
+
+  .editor-name {
+    font-size: 1rem;
+  }
+
+  .editor-title {
+    font-size: 0.85rem;
+  }
+
+  .success-btn {
+    font-size: 0.75rem;
+    padding: 5px 12px;
+  }
+
+  .award-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .table-side table {
+    font-size: 12px;
+  }
+
+  .flag-img {
+    width: 60px;
+    height: 35px;
+  }
+}
+
+/* ======================================= */
+/* 📱 Small Screens (481–768px) */
+/* ======================================= */
+@media (min-width: 481px) and (max-width: 768px) {
+  .publication-section {
+    padding: 50px 15px;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+    margin-bottom: 50px;
+  }
+
+  .publication-card {
+    padding: 20px 20px 30px;
+    max-width: 100%;
+    margin: auto;
+    text-align: left; /* keep layout */
+  }
+
+  .editor-img {
+    width: 100px;
+    height: 130px;
+  }
+
+  .editor-name {
+    font-size: 1.15rem;
+  }
+
+  .editor-title {
+    font-size: 0.9rem;
+  }
+
+  .success-btn {
+    font-size: 0.85rem;
+    padding: 6px 16px;
+  }
+
+  .award-img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .table-side table {
+    font-size: 13px;
+  }
+}
+
+/* ======================================= */
+/* 💻 Medium Screens / Tablets (769–992px) */
+/* ======================================= */
+@media (min-width: 769px) and (max-width: 992px) {
+  .publication-section {
+    padding: 60px 20px;
+  }
+
+  .section-title {
+    font-size: 2.3rem;
+  }
+
+  .publication-card {
+    padding: 22px 22px 32px;
+    max-width: 100%;
+    margin: auto;
+  }
+
+  .editor-img {
+    width: 110px;
+    height: 150px;
+  }
+
+  .editor-name {
+    font-size: 1.2rem;
+  }
+
+  .editor-title {
+    font-size: 0.95rem;
+  }
+
+  .success-btn {
+    font-size: 0.9rem;
+    padding: 7px 18px;
+  }
+
+  .award-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .table-side table {
+    font-size: 13px;
+  }
+}
+
+/* ======================================= */
+/* 🖥 Large Screens (993–1440px) */
+/* ======================================= */
+@media (min-width: 993px) and (max-width: 1440px) {
+  .publication-section {
+    padding: 80px 5%;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+  }
+
+  .publication-card {
+    padding: 25px 25px 35px;
+  }
+
+  .editor-img {
+    width: 120px;
+    height: 160px;
+  }
+
+  .editor-name {
+    font-size: 1.25rem;
+  }
+
+  .editor-title {
+    font-size: 0.95rem;
+  }
+
+  .success-btn {
+    font-size: 0.88rem;
+    padding: 8px 20px;
+  }
+
+  .award-img {
+    width: 150px;
+    height: 100px;
+  }
+
+  .table-side table {
+    font-size: 14px;
+  }
+}
+
+/* ======================================= */
+/* 🖥 Ultra-wide Screens (1441px and up) */
+/* ======================================= */
+@media (min-width: 1441px) {
+  .publication-section {
+    padding: 100px 5%;
+  }
+
+  .section-title {
+    font-size: 2.8rem;
+    margin-bottom: 70px;
+  }
+
+  .publication-card {
+    padding: 28px 28px 38px;
+  }
+
+  .editor-img {
+    width: 130px;
+    height: 180px;
+  }
+
+  .editor-name {
+    font-size: 1.4rem;
+  }
+
+  .editor-title {
+    font-size: 1rem;
+  }
+
+  .success-btn {
+    font-size: 0.9rem;
+    padding: 10px 22px;
+  }
+
+  .award-img {
+    width: 160px;
+    height: 110px;
+  }
+
+  .table-side table {
+    font-size: 14px;
+  }
+}
+
+
+/****************section: 04**********************/
+.features-section {
+  width: 100%;
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+}
+
+.features-container {
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap; /* 👈 keep all 3 boxes in the same line */
+  justify-content: center;
+  gap: 20px; /* space between boxes */
+}
+
+/* Feature Box */
+.feature-box {
+  flex: 0 0 32%; /* 👈 each box takes ~1/3 of container */
+  color: #fff;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 40vh;
+  box-sizing: border-box;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Feature Header */
+.feature-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.feature-icon {
+  width: 45px;
+  height: 45px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.feature-box:hover .feature-icon {
+  background: #fff;
+  color: #012350;
+  transform: scale(1.2);
+}
+
+/* Headings */
+.feature-box h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-transform: uppercase;
+}
+
+/* Paragraphs */
+.feature-box p {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 90%;
+}
+
+/* Different Backgrounds */
+.box1 { background-color: #012350; }
+.box2 { background-color: #6ea1d4; color: #012142; }
+.box3 { background-color: #012350; }
+
+/* Responsive */
+/* ========================= */
+/* Responsive Features Section */
+/* ========================= */
+
+/* Extra Small Devices (Mobile) */
+@media (max-width: 480px) {
+  .features-container {
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .feature-box {
+    flex: 1 1 100%;
+    min-height: 35vh;
+    padding: 25px 20px;
+    text-align: center;
+  }
+
+  .feature-header {
+    justify-content: center;
+  }
+
+  .feature-box h3 {
+    font-size: 1.1rem;
+  }
+
+  .feature-box p {
+    font-size: 0.9rem;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .feature-icon {
+    margin: 0 auto;
+  }
+}
+
+/* Small Devices (Portrait Tablets, 481px–768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .features-container {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .feature-box {
+    flex: 1 1 48%;
+    min-height: 40vh;
+    padding: 30px 25px;
+  }
+
+  .feature-box h3 {
+    font-size: 1.15rem;
+  }
+
+  .feature-box p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Medium Devices (Landscape Tablets / Small Laptops, 769px–1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .features-container {
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+
+  .feature-box {
+    flex: 1 1 30%;
+    min-height: 42vh;
+    padding: 35px 30px;
+  }
+
+  .feature-box h3 {
+    font-size: 1.2rem;
+  }
+
+  .feature-box p {
+    font-size: 1rem;
+  }
+}
+
+/* Large Devices (Desktops, 1025px and up) */
+@media (min-width: 1025px) {
+  .features-container {
+    flex-wrap: nowrap;
+    gap: 20px;
+  }
+
+  .feature-box {
+    flex: 0 0 32%;
+    min-height: 40vh;
+    padding: 40px 30px;
+  }
+
+  .feature-box h3 {
+    font-size: 1.2rem;
+  }
+
+  .feature-box p {
+    font-size: 1rem;
+  }
+}
+
+/* =========section: 05 =================== */
+/* ===== Section: Why Choose Us ===== */
+.why-modern {
+  position: relative;
+  padding: 20px 8% 60px;
+  color: #fff;
+  background: url('/public/images/background8.jpeg') center center / cover no-repeat;
+  font-family: "Verdana", Geneva, Tahoma, sans-serif;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* DARK OVERLAY – clean, no blur */
+.why-modern::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,10,59,0.85);
+  z-index: 1;
+}
+
+/* Header (title + line) */
+.why-header {
+  position: relative;
+  z-index: 3;
+  margin-bottom: 50px;
+}
+
+.why-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.why-subtext {
+  font-size: 1.1rem;
+  color: #cfd3f0;
+  margin-top: 9px;
+  line-height: 1.6;
+}
+
+/* Layout container */
+.why-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  z-index: 3;
+}
+
+/* LEFT IMAGE */
+.why-image img {
+  width: 450px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 1px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+  z-index: 3;
+}
+
+/* RIGHT SIDE CONTENT */
+.why-content {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 25px;
+  z-index: 3;
+}
+
+/* Cards stack */
+.why-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* Each card */
+.why-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  padding: 22px;
+  border-radius: 16px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  transition: all 0.25s ease-in-out;
+}
+
+.why-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255,255,255,0.18);
+  border-color: #ffc003;
+}
+
+/* ICON */
+.why-card-icon {
+  width: 60px;
+  height: 60px;
+  font-size: 32px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+  transition: 0.3s ease;
+}
+
+.why-card:hover .why-card-icon {
+  background: #ffc003;
+  color: #031f44;
+  transform: scale(1.2);
+}
+
+/* TEXT */
+.why-text h3 {
+  font-size: 1.3rem;
+  color: #fff;
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+  text-align: left;
+  margin-top: 15px;
+}
+
+.why-text p {
+  font-size: 1rem;
+  color: #ffc003;
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+/* ================= Responsive ================= */
+
+/* --- Tablets Horizontal (max 1024px) --- */
+@media (max-width: 1024px) {
+  .why-title {
+    font-size: 2.3rem;
+  }
+  .why-image img {
+    width: 330px;
+    height: 330px;
+  }
+}
+
+/* --- Tablets Vertical / Small Laptops (max 900px) --- */
+@media (max-width: 900px) {
+  .why-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .why-image img {
+    width: 360px;
+    height: 360px;
+  }
+
+  .why-content {
+    max-width: 90%;
+  }
+}
+
+/* --- Large Mobiles (max 600px) --- */
+@media (max-width: 600px) {
+  .why-title {
+    font-size: 2rem;
+  }
+
+  .why-subtext {
+    font-size: 1rem;
+  }
+
+  .why-image img {
+    width: 260px;
+    height: 260px;
+  }
+
+  .why-card {
+    padding: 18px;
+    gap: 15px;
+  }
+
+  .why-card-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 26px;
+  }
+
+  .why-text h3 {
+    font-size: 1.15rem;
+  }
+
+  .why-text p {
+    font-size: 0.9rem;
+  }
+}
+
+/* --- Small Mobiles (max 400px) --- */
+@media (max-width: 400px) {
+  .why-title {
+    font-size: 1.6rem;
+  }
+
+  .why-image img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .why-card {
+    padding: 15px;
+  }
+}
+/**************section: 06******************/
+.about-intro {
+  max-width: 1000px;
+  margin: 80px auto;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #222;
+}
+
+/* Header */
+.main-title {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 700;
+  color: #0c1d47;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: #ffc800; /* 🔸 Orange highlight color */
+  font-weight: 700; /* Make it bold */
+}
+
+.main-desc {
+  text-align: justify;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+/* Static Read More Button */
+.readmore-bar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: left;
+  gap: 6px; /* space between text and arrow */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 14px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #012350;
+  transition: all 0.3s ease;
+  background: #fafafa;
+  width: 100%;       /* full width on smaller screens */
+  max-width: 300px;  
+  text-align: center;
+  white-space: nowrap; /* ✅ prevents wrapping */
+}
+
+.readmore-bar span,
+.readmore-bar .arrow {
+  display: inline-flex; /* ✅ keeps them inline horizontally */
+  align-items: center;
+  vertical-align: middle;
+}
+
+.arrow {
+  font-size: 1.1rem;
+  transform: translateY(1px); /* ✅ tiny vertical align fix */
+  transition: transform 0.4s ease;
+}
+
+/* When expanded, rotate the arrow */
+.arrow.rotate {
+  transform: rotate(180deg);
+}
+
+/* Expandable Box (Below Button, Doesn't Push Button Down) */
+.intro-box {
+  border: 1px solid #ddd;
+  border-radius: 0 0 4px 4px;
+  background: #fff;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.6s ease;
+  position: relative;
+  top: -1px;
+}
+
+.intro-box.open {
+  max-height: 2000px;
+  opacity: 1;
+  padding: 25px 30px;
+}
+
+.intro-title {
+  font-size: 1.5rem;
+  color: #012350;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.intro-box p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.intro-box h3 {
+  color: #012350;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.intro-box ul {
+  margin: 10px 0 15px 25px;
+}
+
+.intro-box li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+/* FAQ Section */
+/* FAQ Section — match About Section width */
+.faq-section {
+  background: #ffffff;
+  padding: 10px 0; /* remove extra side padding */
+  color: #000;
+  max-width: 1200px;
+  margin: 0 auto; /* ✅ center the section same as about-intro */
+}
+
+/* FAQ Container — same alignment as About text */
+.faq-container {
+  margin: 0 auto;
+  text-align: left;
+  border-top: 1px solid #ccc;
+  width: 96.5%; /* ✅ same width as readmore-bar */
+}
+
+/* FAQ Question — force proper left alignment */
+.faq-question {
+  width: 100%;
+  background: #f9f9f9;
+  color: #0a1450;
+  border: none;
+  text-align: left;
+  padding: 16px 20px;
+  font-size: 1rem;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* ✅ keep all content left-aligned */
+  gap: 10px; /* ✅ small spacing between number, text, and arrow */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.faq-toggle {
+  margin-left: auto; /* ✅ pushes arrow to far right */
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.faq-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0a1450;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ccc;
+  transition: all 0.3s ease;
+  background: #fff;
+}
+
+.faq-number {
+  color: #0a1450;
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.faq-toggle {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.faq-item.open .faq-question {
+  background: #0a1450;
+  color: #fff;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  background: #ffffff;
+  color: #333;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding: 0 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 300px;
+  padding: 15px 20px;
+}
+
+.faq-answer p {
+  margin: 0;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 1.6rem;
+  }
+  .faq-title {
+    font-size: 1.7rem;
+  }
+  .faq-question {
+    font-size: 0.95rem;
+    padding: 14px 16px;
+  }
+}
+/*************for upper one ******************/
+
+/* Extra Small Devices (Mobile <480px) */
+@media (max-width: 480px) {
+  .about-intro {
+    margin: 40px 10px;
+    padding: 0;
+  }
+
+  .main-title {
+    font-size: 1.5rem;
+  }
+
+  .main-desc {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .readmore-bar {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+    width: 100%;
+  }
+
+  .intro-box {
+    padding: 20px 15px;
+  }
+
+  .intro-title {
+    font-size: 1.3rem;
+  }
+
+  .intro-box p {
+    font-size: 0.9rem;
+  }
+
+  .intro-box h3 {
+    font-size: 1rem;
+  }
+}
+
+/* Small Devices (481px–768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .about-intro {
+    margin: 50px 20px;
+  }
+
+  .main-title {
+    font-size: 1.8rem;
+  }
+
+  .main-desc {
+    font-size: 0.95rem;
+  }
+
+  .readmore-bar {
+    font-size: 0.95rem;
+    padding: 12px 18px;
+  }
+
+  .intro-box {
+    padding: 22px 20px;
+  }
+
+  .intro-title {
+    font-size: 1.4rem;
+  }
+
+  .intro-box p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Medium Devices (769px–1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .about-intro {
+    margin: 60px 40px;
+  }
+
+  .main-title {
+    font-size: 2rem;
+  }
+
+  .main-desc {
+    font-size: 1rem;
+  }
+
+  .readmore-bar {
+    font-size: 1rem;
+    padding: 14px 20px;
+  }
+
+  .intro-box {
+    padding: 24px 25px;
+  }
+
+  .intro-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Large Devices (1025px+) */
+@media (min-width: 1025px) {
+  .about-intro {
+    margin: 80px auto;
+    max-width: 1000px;
+  }
+
+  .main-title {
+    font-size: 2.2rem;
+  }
+
+  .main-desc {
+    font-size: 1rem;
+  }
+
+  .readmore-bar {
+    font-size: 1rem;
+    padding: 14px 20px;
+    width: 96.5%;
+  }
+
+  .intro-box {
+    padding: 25px 30px;
+  }
+
+  .intro-title {
+    font-size: 1.5rem;
+  }
+}
+ 
+
+/************* section: 07 **********************/
+/* === AWARDS SECTION === */
+.award-title {
+  width: 100%;
+  text-align: center;       /* center heading */
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;      /* space between heading and content */
+  position: relative;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-transform: uppercase;
+}
+
+.award-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #FFA500;  /* accent underline */
+  margin: 12px auto 0 auto;   /* center line under heading */
+  border-radius: 2px;
+}
+
+
+.awards-section {
+  display: flex;
+  flex-direction: column;  /* stack children vertically */
+  justify-content: flex-start; /* optional */
+  align-items: center;    /* center horizontally */
+  padding: 10px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* Background Image (Blur + Dim) */
+.awards-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/public/images/background8.jpeg") center/cover no-repeat;
+  filter: blur(1px) brightness(0.85);
+  z-index: 0;
+}
+
+/* Deep Blue Overlay */
+.awards-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 20, 80, 0.8);
+  z-index: 1;
+}
+
+/* Ensure content sits above background */
+.awards-section * {
+  position: relative;
+  z-index: 2;
+}
+
+/* === CONTENT LAYOUT === */
+.awards-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* LEFT SIDE (Certificate Image) */
+.awards-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.award-image {
+  width: 100%;
+  max-width: 480px;
+  border-radius:10px;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+}
+
+.award-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 35px rgba(255, 255, 255, 0.3);
+}
+
+/* RIGHT SIDE (Award Names) */
+/* RIGHT SIDE (Award Names) */
+.awards-right {
+  flex: 0 0 45%;       /* take 45% width of container */
+  max-width: 500px;  
+  width: 80%;  /* limit maximum width */
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.award-item {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  padding: 14px 20px;
+  border-left: 4px solid transparent;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.award-item:hover,
+.award-item.active {
+  background: rgba(255, 255, 255, 0.18);
+  border-left: 4px solid #ffa500;
+  color: #ffa500;
+  transform: translateX(5px);
+}
+/* =================== */
+/* RESPONSIVE STYLES */
+/* =================== */
+
+/* Medium screens */
+@media (max-width: 1024px) {
+  .awards-container {
+    gap: 25px;
+    padding: 30px 20px;
+  }
+
+  .awards-left {
+    max-width: 400px;
+  }
+
+  .awards-right {
+    max-width: 400px;
+  }
+
+  .award-item {
+    font-size: 1rem;
+    padding: 12px 18px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .awards-container {
+    gap: 20px;
+    padding: 20px 15px;
+  }
+
+  .awards-left {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .awards-right {
+    flex: 1 1 100%;
+    max-width: 90%;
+    align-items: left; /* center boxes under image */
+    max-width: 500px;
+  }
+
+  .award-item {
+    font-size: 0.95rem;
+    padding: 10px 16px;
+    max-width: 90%; /* keeps boxes from stretching too wide */
+  }
+}
+
+/* Very small screens (mobile) */
+@media (max-width: 480px) {
+  .awards-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 10px;
+  }
+
+  .awards-left,
+  .awards-right {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .award-image {
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 15px;
+  }
+
+  .award-item {
+    width: 100%;
+    max-width: 95%;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  .award-title {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+  }
+}
+
+/***************section: 08******************/
+.stats-section {
+  background-color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ✅ ensures perfect horizontal center */
+  justify-content: center; /* ✅ centers vertically inside the flex item */
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+}
+
+.stat-img {
+  width: 55px;
+  height: 55px;
+  margin-bottom: 4px;
+  display: block; /* ✅ removes inline spacing issues */
+  object-fit: contain; /* ✅ keeps aspect ratio clean */
+}
+
+.stat-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #191970;
+  margin-bottom: 2px;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.stat-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* ==========================
+   MEDIUM SCREENS (TABLETS)
+========================== */
+@media (max-width: 900px) {
+  .stats-container {
+    gap: 25px;
+  }
+
+  .stat-item {
+    width: 160px;              /* ✔ Slightly smaller but SAME layout */
+  }
+
+  .stat-number {
+    font-size: 1.7rem;
+  }
+}
+
+
+/* ==========================
+   SMALL SCREENS (PHONES)
+========================== */
+@media (max-width: 600px) {
+  .stats-container {
+    gap: 22px;
+  }
+
+  .stat-item {
+    width: 45%;                 /* ✔ two per row, BEST layout */
+  }
+
+  .stat-number {
+    font-size: 1.6rem;
+  }
+
+  .stat-img {
+    width: 55px;
+    height: 55px;
+  }
+}
+
+
+/* ==========================
+   EXTRA SMALL (VERY SMALL)
+========================== */
+@media (max-width: 380px) {
+  .stat-item {
+    width: 100%;                /* ✔ one per row ONLY on very small */
+  }
+
+  .stat-number {
+    font-size: 1.4rem;
+  }
+}
+/******************section: 09***********************/
+/* ==== Testimonial Overlap Section ==== */
+.testimonial-overlap-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 100px 8%;
+  background: #fff;
+  overflow: visible;
+}
+
+/* Left image */
+.testimonial-image {
+  flex: 1;
+  min-width: 550px;
+  height: 480px;
+  background-image: url("/public/images/sideimage.webp"); /* replace with your actual image */
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+
+/* Right overlapping box */
+.testimonial-box {
+  position: relative;
+  flex: 1;
+  max-width: 550px;
+  background: #fff;
+  border-radius: 6px;
+  padding: 30px 40px; /* reduced padding */
+  margin-left: -100px; /* overlap adjusted */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  z-index: 2;
+  animation: fadeIn 0.8s ease-in-out;
+  min-height: 260px; /* 👈 control height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.testimonial-box h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.testimonial-text {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.author-name {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.author-title {
+  font-size: 0.9rem;
+}
+
+.testimonial-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  gap: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #1e58b5;
+  transform: scale(1.2);
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === SLIDER FIX === */
+.testimonial-slide {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateX(40px);
+}
+
+.testimonial-slide.active {
+  opacity: 1;
+  transform: translateX(0);
+  position: relative;
+  z-index: 2;
+}
+
+.testimonial-box {
+  position: relative;
+  overflow: hidden; /* ✅ keeps the slides tidy inside */
+}
+
+/* Optional smooth fade between slides */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.testimonial-slide.active {
+  animation: fadeSlide 0.8s ease forwards;
+}
+
+/* =============================
+      RESPONSIVE FIXES
+================================ */
+/* ==== Large Tablets (1024px) ==== */
+@media (max-width: 1100px) {
+  .testimonial-overlap-section {
+    gap: 20px;
+    padding: 80px 6%;
+  }
+
+  .testimonial-image {
+    min-width: 380px;
+    height: 420px;
+  }
+
+  .testimonial-box {
+    margin-left: -60px; /* smaller overlap */
+    padding: 25px 30px;
+  }
+}
+/* ==== Tablets (768px) ==== */
+@media (max-width: 900px) {
+  .testimonial-overlap-section {
+    flex-direction: column;
+    padding: 70px 5%;
+    align-items: center;
+  }
+
+  .testimonial-image {
+    width: 100%;
+    max-width: 500px;
+    height: 380px;
+    min-width: unset;
+  }
+
+  .testimonial-box {
+    margin-left: 0; /* ❤️ remove overlap on tablets */
+    max-width: 600px;
+    width: 100%;
+    margin-top: -40px; /* slight overlap downward for style */
+  }
+}
+/* ==== Mobile (600px) ==== */
+@media (max-width: 600px) {
+  .testimonial-overlap-section {
+    padding: 60px 20px;
+  }
+
+  .testimonial-image {
+    height: 300px;
+    border-radius: 5px;
+  }
+
+  .testimonial-box {
+    padding: 20px;
+    margin-top: -30px;
+  }
+
+  .testimonial-box h2 {
+    font-size: 1.3rem;
+  }
+
+  .testimonial-text {
+    font-size: 0.95rem;
+  }
+}
+/* ==== Extra Small Phones (400px) ==== */
+@media (max-width: 400px) {
+  .testimonial-image {
+    height: 260px;
+  }
+
+  .testimonial-box {
+    padding: 18px;
+  }
+
+  .testimonial-box h2 {
+    font-size: 1.15rem;
+  }
+}
+
+
+/*******************section: 10 ********************/
+.quote-section {
+  position: relative; /* so ::before and ::after are relative to it */
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  overflow: hidden; /* ensures blur doesn’t spill */
+  color: #fff;
+}
+
+.quote-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/public/images/background8.jpeg") center/cover no-repeat;
+  filter: blur(2px) brightness(0.85);
+  z-index: 0; /* behind overlay and content */
+}
+
+.quote-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 15, 57, 0.7); /* semi-transparent blue overlay */
+  z-index: 1; /* above background image but below content */
+}
+
+.quote-section .quote-text {
+  position: relative; /* above overlays */
+  z-index: 2;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.4;
+  max-width: 800px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* ==========================
+   TABLETS (medium screens)
+========================== */
+@media (max-width: 900px) {
+  .quote-section {
+    height: 35vh;
+    min-height: 230px;
+  }
+
+  .quote-section .quote-text {
+    font-size: 1.5rem;
+    max-width: 650px;
+  }
+}
+
+
+/* ==========================
+   MOBILE (normal phones)
+========================== */
+@media (max-width: 600px) {
+  .quote-section {
+    height: auto;             /* ✔ prevents squishing */
+    padding: 50px 20px;
+  }
+
+  .quote-section .quote-text {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    max-width: 95%;
+  }
+}
+
+
+/* ==========================
+   EXTRA SMALL (very small phones)
+========================== */
+@media (max-width: 380px) {
+  .quote-section {
+    padding: 60px 15px;
+  }
+
+  .quote-section .quote-text {
+    font-size: 1.1rem;
+  }
+}

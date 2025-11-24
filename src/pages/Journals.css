@@ -1,0 +1,1019 @@
+.journals-page {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  color: #191970;
+}
+
+/* ===== HERO SECTION ===== */
+.journals-hero {
+  background: url("/public/images/background7.webp") center/cover no-repeat;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  color: #fff;
+  overflow: hidden;
+}
+
+.journals-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, rgba(0,0,0,0.6), rgba(0,0,50,0.7));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 750px;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+/* ===== JOURNAL SECTION ===== */
+.journals-books {
+  text-align: center;
+  padding: 60px 40px;
+  background: linear-gradient(180deg, #f7f8ff 0%, #eef1ff 100%);
+}
+
+.journals-books h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #191970;
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.journals-books h2::after {
+  content: "";
+  display: block;
+  height: 5px;
+  width: 90px;
+  background: #f0c413;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+/* ===== BOOK CARD ===== */
+.book-card {
+  text-decoration: none;
+  color: white;
+  border-radius: 2px;
+  padding: 25px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  transition: all 0.4s ease;
+  height: 300px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  background: linear-gradient(145deg, rgba(0,0,0,0.05), rgba(255,255,255,0.05));
+  overflow: hidden;
+}
+
+.book-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.15), transparent 70%);
+  opacity: 0.2;
+  transition: opacity 0.3s ease;
+}
+
+.book-card:hover::before {
+  opacity: 0.5;
+}
+
+.book-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+/* Logo */
+/* Make all logos white */
+.book-cover img {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+
+.book-card:hover .book-cover img {
+  transform: scale(1.08);
+}
+
+/* Badge between logo and tagline */
+.book-badge {
+  display: block;
+  margin: 6px auto;
+  font-size: 1.3rem;
+}
+
+/* Info section */
+.book-info h3 {
+  font-size: 1.1rem;
+  margin: 4px 0;
+  font-weight: 600;
+}
+
+.book-info p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 6px;
+}
+
+.book-info .book-stat {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+/* Arrow button */
+.book-arrow {
+  position: absolute;
+  bottom: 12px;
+  right: 16px;
+  background: #fff;
+  color: #191970;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.book-card:hover .book-arrow {
+  background: #191970;
+  color: #fff;
+  transform: rotate(45deg) scale(1.1);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1200px) {
+  .book-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .book-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .journals-books {
+    padding: 50px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .book-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .journals-books {
+    padding: 40px 15px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .book-card {
+    height: auto;
+    padding: 20px;
+  }
+
+  .book-cover img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .book-cover img[alt="ACS"],
+  .book-cover img[alt="Wiley"],
+  .book-cover img[alt="MDPI"] {
+    width: 85px;
+    height: 85px;
+  }
+}
+
+
+/***************** section: 03 ************************/
+/* ===== JOURNAL LOGO SLIDER SECTION ===== */
+.journals-slider {
+  position: relative;
+  background: #ffffff; /* White background */
+  overflow: hidden;
+  height: 30vh; /* Section height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+/* Track for scrolling logos */
+.slider-track {
+  display: flex;
+  gap: 50px;
+  width: calc(300px * 20);
+  animation: scrollLoop 40s linear infinite;
+}
+
+/* Each logo container */
+.slide {
+  flex: 0 0 auto;
+  width: 260px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+/* Logo images */
+.slide img {
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(1) contrast(1.1); /* keeps colors vivid */
+  transition: transform 0.4s ease;
+}
+
+.slide:hover img {
+  transform: scale(1.15);
+}
+
+/* Infinite scroll animation */
+@keyframes scrollLoop {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .slider-track {
+    gap: 70px;
+    animation-duration: 35s;
+  }
+  .slide {
+    width: 200px;
+    height: 130px;
+  }
+  .slide img {
+    width: 140px;
+  }
+}
+
+@media (max-width: 768px) {
+  .journals-slider {
+    height: 25vh;
+  }
+  .slider-track {
+    gap: 60px;
+  }
+  .slide {
+    width: 160px;
+    height: 100px;
+  }
+  .slide img {
+    width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .journals-slider {
+    height: 22vh;
+  }
+  .slide {
+    width: 130px;
+    height: 80px;
+  }
+  .slide img {
+    width: 90px;
+  }
+}
+
+/*********************section: 04**********************/
+.why-publish {
+  position: relative;
+  padding: 80px 20px;
+  overflow: hidden;
+  background: #f0f4ff;
+}
+
+.why-bg {
+  position: absolute;
+  inset: 0;
+  background: url('/public/images/background8.jpeg') center/cover no-repeat;
+  filter: blur(6px) brightness(0.7);
+  z-index: 0;
+}
+
+.why-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.why-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 60px;
+  color: #ffffff;
+}
+
+/* Grid */
+.publish-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+/* Card */
+.publish-card {
+  background: rgba(255, 255, 255, 0.1); /* transparent */
+  backdrop-filter: blur(10px);
+  width: 300px;
+  min-height: 260px;
+  border-radius: 15px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+}
+
+/* Icons */
+.publish-icon {
+  font-size: 50px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+/* Card Text */
+.publish-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #ffb300;
+  text-transform: uppercase;
+}
+
+.publish-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+/* Hover */
+.publish-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+/* Animation */
+.animate {
+  animation: fadeUp 0.8s forwards;
+}
+
+.publish-card:nth-child(1) { animation-delay: 0.2s; }
+.publish-card:nth-child(2) { animation-delay: 0.3s; }
+.publish-card:nth-child(3) { animation-delay: 0.4s; }
+.publish-card:nth-child(4) { animation-delay: 0.5s; }
+.publish-card:nth-child(5) { animation-delay: 0.6s; }
+.publish-card:nth-child(6) { animation-delay: 0.7s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVE ===== */
+
+/* Medium screens: 2 cards per row */
+@media (max-width: 992px) {
+  .publish-card {
+    width: 48%; /* two per row with some gap */
+  }
+}
+
+/* Small screens: 1 card per row */
+@media (max-width: 768px) {
+  .publish-card {
+    width: 100%;
+  }
+
+  .why-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+  }
+}
+
+/* Extra small screens (phones) */
+@media (max-width: 480px) {
+  .why-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .publish-card {
+    padding: 25px 15px;
+    min-height: 220px;
+  }
+
+  .publish-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+  }
+
+  .publish-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .publish-card p {
+    font-size: 0.9rem;
+  }
+}
+
+
+/**********************section: 05*********************/
+.book-services {
+  position: relative;
+  padding: 60px 40px;
+  background: #fdfdfd; /* soft neutral background */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Header */
+.services-header {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 60px auto;
+}
+
+.services-header h2 {
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem); /* responsive font size */
+  font-weight: 700;
+  color: #191970;
+  margin-bottom: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.services-header span {
+  color: #c49b0e; /* soft elegant gold accent */
+}
+
+.services-header p {
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  color: #555;
+  line-height: 1.7;
+  padding: 0 10px;
+}
+
+/* Grid Layout */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px 45px;
+  justify-items: center;
+  padding: 0 60px;
+}
+
+/* Card */
+.service-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 25px 45px;
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  max-width: 760px;
+  width: 90%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  border: 1px solid #e0e0e0;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+  background: #fffef8; /* soft ivory highlight */
+}
+
+/* Icon */
+.service-icon img {
+  width: 55px;
+  height: 55px;
+  margin-right: 25px;
+  margin-top: 10px;
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.08));
+}
+
+/* Text */
+.service-text h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #221081;
+  margin-bottom: 8px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.service-text p {
+  font-size: clamp(0.85rem, 1vw, 0.96rem);
+  color: #333;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+/* ---------- RESPONSIVE BREAKPOINTS ---------- */
+
+/* Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .book-services {
+    padding: 50px 30px;
+  }
+
+  .services-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    padding: 0 30px;
+  }
+
+  .service-card {
+    padding: 20px 30px;
+  }
+}
+
+/* Small Tablets & Large Phones (max-width: 768px) */
+@media (max-width: 768px) {
+  .book-services {
+    padding: 40px 20px;
+  }
+
+  .services-header {
+    margin-bottom: 40px;
+  }
+
+  .services-container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 0 15px;
+  }
+
+  .service-card {
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 25px;
+  }
+
+  .service-icon img {
+    margin: 0 0 15px 0;
+  }
+
+  .service-text h3 {
+    text-align: center;
+  }
+
+  .service-text p {
+    text-align: center;
+  }
+}
+
+/* Small Phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .services-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .services-container {
+    gap: 20px;
+  }
+
+  .service-card {
+    padding: 20px;
+  }
+
+  .service-icon img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .service-text h3 {
+    font-size: 1.1rem;
+  }
+
+  .service-text p {
+    font-size: 0.9rem;
+  }
+}
+
+/******************section: 06**********************/
+/* ====== CONTACT SECTION MAIN ====== */
+.form-disclaimer {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #666;
+  text-align: center;
+}
+
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  background: #f9fbff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 20px 10px;
+  box-sizing: border-box;
+}
+
+.contact-wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1350px;
+  gap: 0;
+}
+
+/* ====== LEFT SIDE IMAGE ====== */
+.contact-image {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  height: auto;
+}
+
+.contact-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 64, 0.5);
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  color: #fff;
+  font-size: 2.4rem;
+  font-weight: 800;
+  z-index: 2;
+  line-height: 1.3;
+  letter-spacing: 1px;
+  font-family: 'Poppins', sans-serif;
+  max-width: 400px;
+  text-transform: uppercase;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.6);
+}
+
+.overlay-text span {
+  color: #FFD700;
+  font-weight: 900;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #FFD700;
+  width: 0;
+  animation: typing 2.5s steps(30, end) forwards, blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0ch; }
+  to { width: 30ch; } /* adjust to number of characters */
+}
+
+@keyframes blink {
+  0%, 50%, 100% { border-color: transparent; }
+  25%, 75% { border-color: #FFD700; }
+}
+
+/* ====== RIGHT FORM SIDE ====== */
+.contact-form-container {
+  flex: 1;
+  background: #fff;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: -5px 0 15px rgba(0,0,0,0.05);
+  min-width: 300px;
+}
+
+.contact-form-container h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0b3c91;
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+
+/* ====== FORM STYLING ====== */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-group label {
+  font-weight: 600;
+  color: #1a1a1a;
+  font-size: 0.95rem;
+}
+
+.input-group input,
+.custom-select select {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid #cfd6e4;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #333;
+  background: #fdfdfd;
+  outline: none;
+  appearance: none;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus,
+.custom-select select:focus {
+  border-color: #0b3c91;
+  box-shadow: 0 0 6px rgba(11, 60, 145, 0.15);
+}
+
+.custom-select {
+  position: relative;
+  width: 100%;
+}
+
+.custom-select::after {
+  content: "▼";
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  transform: translateY(-50%);
+  font-size: 0.7rem;
+  color: #0b3c91;
+  pointer-events: none;
+}
+
+.custom-select select {
+  cursor: pointer;
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cfd6e4;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fff;
+  color: #333;
+  appearance: none;
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.row-fields {
+  display: flex;
+  flex-direction: row;
+  gap: 28px;
+  width: 100%;
+}
+
+.row-fields .input-group {
+  flex: 1;
+}
+
+/* Button */
+.contact-form button {
+  width: 100%; /* make button full width */
+  background-color: #0b3c91;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #072a6c;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 992px) {
+  .contact-wrapper {
+    flex-direction: column;
+  }
+
+  .contact-image {
+    height: 300px;
+  }
+
+  .overlay-text {
+    font-size: 2rem;
+    bottom: 15px;
+    left: 15px;
+  }
+
+  .contact-form-container {
+    padding: 30px 20px;
+  }
+
+  .row-fields {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .overlay-text {
+    font-size: 1.6rem;
+  }
+
+  .contact-form-container {
+    padding: 20px 15px;
+  }
+
+  .contact-form button {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+}
+
+
+/***********full page animation************/
+/* ===== GENERAL FADE-IN-UP ANIMATION ===== */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUpAnim 0.8s forwards;
+}
+
+@keyframes fadeUpAnim {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== HERO SECTION ===== */
+.journals-hero .hero-content {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeUpAnim 1s forwards;
+  animation-delay: 0.2s;
+}
+
+/* ===== JOURNAL BOOK CARDS ===== */
+.book-card {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUpAnim 0.8s forwards;
+}
+
+.book-card:nth-child(1) { animation-delay: 0.3s; }
+.book-card:nth-child(2) { animation-delay: 0.5s; }
+.book-card:nth-child(3) { animation-delay: 0.7s; }
+.book-card:nth-child(4) { animation-delay: 0.9s; }
+.book-card:nth-child(5) { animation-delay: 1.1s; }
+.book-card:nth-child(6) { animation-delay: 1.3s; }
+
+/* ===== LOGO SLIDER ===== */
+.journals-slider .slide {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUpAnim 0.8s forwards;
+}
+
+.journals-slider .slide:nth-child(1) { animation-delay: 0.2s; }
+.journals-slider .slide:nth-child(2) { animation-delay: 0.3s; }
+.journals-slider .slide:nth-child(3) { animation-delay: 0.4s; }
+/* Continue for remaining logos */
+
+/* ===== WHY PUBLISH CARDS ===== */
+.publish-card {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  animation: fadeUpAnim 0.8s forwards;
+}
+
+.publish-card:nth-child(1) { animation-delay: 0.2s; }
+.publish-card:nth-child(2) { animation-delay: 0.3s; }
+.publish-card:nth-child(3) { animation-delay: 0.4s; }
+.publish-card:nth-child(4) { animation-delay: 0.5s; }
+.publish-card:nth-child(5) { animation-delay: 0.6s; }
+.publish-card:nth-child(6) { animation-delay: 0.7s; }
+
+/* ===== SERVICE CARDS ===== */
+.service-card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUpAnim 0.8s forwards;
+}
+
+.service-card:nth-child(1) { animation-delay: 0.2s; }
+.service-card:nth-child(2) { animation-delay: 0.3s; }
+.service-card:nth-child(3) { animation-delay: 0.4s; }
+.service-card:nth-child(4) { animation-delay: 0.5s; }
+
+/* ===== CONTACT FORM LEFT IMAGE ===== */
+.contact-image img,
+.overlay-text {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUpAnim 0.8s forwards;
+}
+
+.contact-image img { animation-delay: 0.2s; }
+.overlay-text { animation-delay: 0.4s; }
+
+/* ===== CONTACT FORM RIGHT ===== */
+.contact-form-container h3,
+.contact-form button,
+.input-group {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUpAnim 0.8s forwards;
+}
+
+.contact-form-container h3 { animation-delay: 0.2s; }
+.input-group:nth-child(1) { animation-delay: 0.3s; }
+.input-group:nth-child(2) { animation-delay: 0.4s; }
+.input-group:nth-child(3) { animation-delay: 0.5s; }
+.input-group:nth-child(4) { animation-delay: 0.6s; }
+.input-group:nth-child(5) { animation-delay: 0.7s; }
+.contact-form button { animation-delay: 0.8s; }
+
+/* ===== SCROLL-TRIGGER (Optional JS) ===== */
+/* If you want animations to trigger when element enters viewport, you can add a class "fade-up" with IntersectionObserver */
